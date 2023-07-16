@@ -11,12 +11,6 @@
                 <Image x:Name="Foto" BackgroundColor="Black" Margin="50" WidthRequest="200" HeightRequest="350"/>
             </StackLayout>
 
-            <Image Source="paisajes.gif" x:Name="imgFoto" WidthRequest="20" HeightRequest="20" IsVisible="false" />
-
-
-
-
-
             <Grid Margin="40,5,40,0">
 
                 <Label Text="Latitud:"
