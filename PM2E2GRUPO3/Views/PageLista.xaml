@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2GRUPO3.Views.PageLista"
+             xmlns:conver="clr-namespace:PM2E2GRUPO3.Config">
+    <ContentPage.Resources>
+        <conver:Base64toImage x:Key="ByteArray"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label Text="Lista De Sitios" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <ListView x:Name="ListaEmpleados" ItemSelected="ListaEmpleados_ItemSelected" HeightRequest="200" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.RowSpan="2" Grid.Column="0" x:Name="imagen" Source="{Binding foto, Converter={StaticResource ByteArray}}"
+                        WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
+
+                                <StackLayout Grid.Column="1" Orientation="Horizontal" >
+                                    <Label Text="{Binding descripcion}" TextColor="Black"  FontSize="16" />
+                                    <Label Text="{Binding latitud}" FontSize="16"  TextColor="Black"  />
+                                    <Label Text="{Binding longitud}"  FontSize="16"  TextColor="Black" />
+                                </StackLayout>
+
+                                <Frame Grid.Row="1" Grid.Column="1" CornerRadius="0" WidthRequest="25"  BackgroundColor="#9FA49C" HasShadow="True" BorderColor="#9FA49C" IsVisible="False">
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
