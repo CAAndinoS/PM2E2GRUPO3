@@ -169,7 +169,7 @@ namespace PM2E2GRUPO3.Views
         {
             txtDescripcion.Text = "";
             ruta = "";
-            imgFoto.Source = "paisajes.gif";
+            
             aud = 0;
             lblAudio.Text = "Estatus Audio";
             lblAudio.TextColor = System.Drawing.Color.Blue;
